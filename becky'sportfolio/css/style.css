@@ -4,6 +4,11 @@ html {
   line-height: 1.4;
 }
 
+.main{
+  position: relative;
+  z-index: -1;
+}
+
 /* Style for navbar */
 .navbar {
   background-color: #fbf7f6;
@@ -55,6 +60,43 @@ html {
   border-radius: 28px;
 }
 
+/*style fot footer bar */
+.footer-bar {
+  background-color: #fbf7f6;
+  border: 4px solid rgb(203, 228, 144);
+  position: relative;
+  top: 250px;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0 4px 4px rgba(255, 245, 245, 0.78);
+  border-radius: 15px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.footer-bar p {
+  margin: 0;
+  padding: 0;
+  font-family: poppins, sans-serif;
+  color: rgb(81, 71, 71);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.mood-circle{
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  background-color: #dab1da;
+  display: inline-block;
+  border: 1px solid #ffffff;
+}
+
+
 /* Body background image */
 body {
   margin-top: 50px;
@@ -67,9 +109,10 @@ body {
   padding-top: 50px;
   overflow-y: scroll;
   overflow-x: hidden;
+  user-select: text !important;
 }
 
-/*fixed border for all pages*/
+/*fixed border for most pages*/
 .fixed-border, .fixed-border2 , .fixed-border4, .fixed-border5 {
   position: absolute;
   background-color: #fbf7f6;
@@ -82,7 +125,10 @@ body {
   border-radius: 15px;
   box-sizing: border-box;
   flex-wrap: wrap;
+  z-index: -1;
 }
+
+/*fixed border for topic 2 page*/
  .fixed-border3 {
   position: absolute;
   background-color: #fbf7f6;
@@ -91,12 +137,12 @@ body {
   left: 29px;
   padding: 10px;
   width: calc(100% - 58px);
-  height: 340vh;
+  height: 360vh;
   border-radius: 15px;
   box-sizing: border-box;
   flex-wrap: wrap;
+   z-index: -1;
 }
-
 
 /*welcome page 3 pictures with hover*/
 .image-container {
@@ -107,6 +153,7 @@ body {
   padding-bottom: 10px;
   max-width: 100%;
 }
+
 .image-container img {
   max-width: 30%; /*Adjusts image width*/
   height: auto; /*Keeps the aspect ratio*/
@@ -137,6 +184,11 @@ body {
   left: 50%;
 }
 
+/*style for copy-and-paste action*/
+.intro-text::selection{
+  color: rgb(97, 181, 213);
+}
+
 /*becky's bio main text*/
 .short-bio{
   color: rgb(117, 101, 101);
@@ -153,6 +205,11 @@ body {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+}
+
+/*style for copy-and-paste action*/
+.short-bio::selection{
+  color: rgb(255, 143, 192);
 }
 
 /*becky's bio highlight 2*/
@@ -217,8 +274,8 @@ body {
   box-shadow: 0 4px 4px rgba(221, 217, 217, 0.78);
 }
 
-/*home page hover link*/
-.home-link a:hover {
+/*home page hover link, also hover link for quiz button and restart button*/
+.home-link a:hover, .quiz-button:hover, #restart:hover {
   background-color: rgb(97, 181, 213);
   border: 4px solid rgb(97, 181, 213);
   color: #ffffff;
@@ -240,6 +297,11 @@ body {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+}
+
+/*style for copy-and-paste action*/
+.home-text::selection{
+  color: rgb(97, 181, 213);
 }
 
 /*table of contents text for home original color*/
@@ -278,6 +340,11 @@ body {
   position: relative;
 }
 
+/*style for copy-and-paste action*/
+.two-text::selection, .topic-description::selection{
+  color: rgba(255, 143, 192, 0.89);
+}
+
 /*main text for home*/
 .topic-description{
   color: rgb(117, 101, 101);
@@ -307,6 +374,12 @@ body {
   align-items: center;
   position: relative;
 }
+
+/*style for copy-and-paste action*/
+.one-header::selection, .one-text::selection{
+  color: rgba(255, 143, 192, 0.89);
+}
+
 /*main text for topic one*/
 .one-text{
   color: rgb(117, 101, 101);
@@ -338,6 +411,11 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+}
+
+/*style for copy-and-paste action*/
+.one-header2::selection, .table::selection, .head::selection, .td::selection{
+  color: rgb(97, 181, 213);
 }
 
 /*Table Styling*/
@@ -387,6 +465,12 @@ body {
   align-items: center;
   position: relative;
 }
+
+/*style for copy-and-paste action*/
+.two-header1::selection{
+  color: rgb(97, 181, 213);
+}
+
 /*main text for topic two*/
 .two-text{
   color: rgb(117, 101, 101);
@@ -395,17 +479,121 @@ body {
   left: 50px;
   font-weight: bold;
   padding: 10px 20px;
+  display: block;
+  margin-top: 50px;
+  position: relative;
+  justify-content: center;
+  width: 80%;
+  text-align: left;
+  pointer-events: auto;
+}
+
+/*style for copy-and-paste action*/
+.two-text::selection{
+  color: rgb(97, 181, 213);
+}
+
+/*main text for topic two citations highlighted*/
+.two-highlight{
+  color: #ff8fc0;
+}
+
+/*first header for quiz*/
+.quiz-header{
+  color: rgb(179, 204, 105);
+  text-align: center;
+  font-size: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/*styling for quiz intro text*/
+.quiz-intro{
+  color: rgb(117, 101, 101);
+  font-size: 35px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-top: 20px;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+/*style for quiz intro links*/
+.quiz-intro a{
+  color: rgba(255, 143, 192, 0.89);
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-weight: bold;
+}
+
+/*styling for quiz questions with the options*/
+.quiz-question{
+  color: rgb(117, 101, 101);
+  font-size: 25px;
+  text-decoration: none;
+  left: 30px;
+  font-weight: bold;
+  padding: 10px 20px;
   display: inline-block;
   margin-top: 50px;
   position: relative;
   justify-content: center;
   width: 80%;
   text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-/*main text for topic two citations highlighted*/
-.two-highlight{
-  color: #ff8fc0;
+/*style for quiz question itself*/
+.quiz-question h2{
+  color: rgb(150, 175, 59);
+  font-size: 30px;
+}
+
+/*style for quiz and restart button*/
+.quiz-button, #restart {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: block;
+  background-color: rgba(255, 143, 192, 0.89);
+  border: 4px solid rgb(255, 143, 192);
+  border-radius: 15px;
+  box-shadow: 0 4px 4px rgba(221, 217, 217, 0.78);
+}
+
+/*style for quiz result*/
+.quiz-result {
+  margin-top: 30px;
+  padding: 15px;
+  text-align: center;
+}
+
+/*style for result text*/
+#result {
+  color: rgb(83, 73, 73);
+  font-size: 34px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-top: 50px;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  text-align: left;
+  margin-left: 30px;
 }
 
 
@@ -422,6 +610,12 @@ body {
   position: relative;
   font-weight: bold;
   text-transform: none;
+}
+
+/*style for copy-and-paste action*/
+.ref-header1::selection, .ref-text::selection, .ref-citations::selection, .quiz-intro::selection, .quiz-intro::selection,
+.quiz-question::selection, #result::selection {
+  color: rgb(255, 143, 192);
 }
 
 /*main text for references*/
@@ -457,7 +651,7 @@ body {
 }
 
 /*header two for references/ resources*/
-.ref-header2{
+.res-header2{
   color: rgb(255, 143, 192);
   font-size: 60px;
   text-decoration: none;
@@ -506,6 +700,10 @@ body {
   right: 500px;
 }
 
+.res-header2::selection, .res-text::selection{
+  color: rgb(179, 204, 105);
+}
+
 /*color of reference/resource pages with hover*/
 .ref-link a{
   color: rgb(115, 211, 251);
@@ -551,7 +749,7 @@ body {
 
 @media only screen and (max-width: 768px) {
   .image-container img {
-    max-width: 90%; /* Responsive images on smaller screens */
+    max-width: 50%; /* Responsive images on smaller screens */
   }
 
   .navbar {
