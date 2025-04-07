@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>quiz! becky's portfolio <3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="img/becksterz-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Quiz on the material of topic one and topic two.">
+</head>
+
+<body>
+<!-- Main Navigation -->
+<header>
+  <nav class="navbar">
+    <ul class="nava">
+      <!-- Home Page -->
+      <li><a href="home.html">home</a></li>
+      <!-- Topic One Page -->
+      <li><a href="topic-one.html">topic one</a></li>
+      <!-- Topic Two Page -->
+      <li><a href="topic-two.html">topic two</a></li>
+      <!-- Quiz Page -->
+      <li><a href="quiz.html">quiz</a></li>
+      <!-- Topic References Page -->
+      <li><a href="references.html">references !</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- Fixed border that is the layer for all texts -->
+  <div class="fixed-border3"></div>
+
+  <div class="quiz-header">
+    <h1>Quiz Time !</h1>
+  </div>
+
+  <div class="quiz-intro"> You will now be tested on the material from <span><a href="topic-one.html">topic one</a>
+  </span>and <span><a href="topic-two.html">topic two</a></span>. <br>Good luck and have fun!</div>
+
+  <form id="quiz">
+    <div class="quiz-question">
+      <h2>1. What is one of the key features of HTTP/1.0 introduced between 1991 and 1995?</h2>
+      <label><input type="radio" name="q1" value="a"> a) support for multiple header fields </label><br>
+      <label><input type="radio" name="q1" value="b"> b) plain text request and response </label><br>
+      <label><input type="radio" name="q1" value="c"> c) QUIC protocol for faster connections </label><br>
+      <label><input type="radio" name="q1" value="d"> d) byte-range requests </label>
+    </div>
+
+    <div class="quiz-question">
+      <h2>2. Which version of HTTP introduced the use of QUIC for better speed and consistency?</h2>
+      <label><input type="radio" name="q2" value="a"> a) HTTPS/0.9 </label><br>
+      <label><input type="radio" name="q2" value="b"> b) HTTPS/1.0 </label><br>
+      <label><input type="radio" name="q2" value="c"> c) HTTPS/2 </label><br>
+      <label><input type="radio" name="q2" value="d"> d) HTTPS/3 </label>
+    </div>
+
+    <div class="quiz-question">
+      <h2>3. What is the main purpose of SEO (Search Engine Optimization)?</h2>
+      <label><input type="radio" name="q3" value="a"> a) to improve the speed of internet connections </label><br>
+      <label><input type="radio" name="q3" value="b"> b) to enhance the security of websites </label><br>
+      <label><input type="radio" name="q3" value="c"> c) to increase the visibility of a website on search engines</label><br>
+      <label><input type="radio" name="q3" value="d"> d) to make websites compatible with all devices </label>
+    </div>
+
+    <div class="quiz-question">
+      <h2> 4. The standard character encoding used to represent text in computers and electronics devices,
+        consisting of 128 characters, known as <label>
+          <input type="text" name="q4" placeholder="fill in the blank"/>
+        </label>.
+      </h2>
+    </div>
+
+    <div class="quiz-question">
+      <h2>5. Which of the following are key components of SEO? (Select all that apply)</h2>
+      <label><input type="checkbox" name="q5" value="a"> a) technical </label><br>
+      <label><input type="checkbox" name="q5" value="b"> b) copy-writing</label><br>
+      <label><input type="checkbox" name="q5" value="c"> c) popularity </label><br>
+      <label><input type="checkbox" name="q5" value="d"> d) file transfer protocols </label>
+    </div>
+
+    <button type="submit" class="quiz-button">Submit</button>
+  </form>
+
+  <div id="result"></div>
+  <button id="restart" style="display: none;">Restart Quiz</button>
+
+</main>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
