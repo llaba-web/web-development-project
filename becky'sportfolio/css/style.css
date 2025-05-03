@@ -1,12 +1,14 @@
+/* Global HTML styles */
 html {
   color: #222;
-  font-size: 1em;
+  font-size: 16px;
   line-height: 1.4;
 }
 
+/* General container positioning */
 .main{
   position: relative;
-  z-index: -1;
+  z-index: 0;
 }
 
 /* Style for navbar */
@@ -23,7 +25,6 @@ html {
   border-radius: 15px;
   margin: 0;
   box-sizing: border-box;
-
 }
 
 /* Style for the navigation list */
@@ -46,11 +47,12 @@ html {
 .nava a {
   text-decoration: none;
   color: #61b5d5;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  padding: 10px;
+  padding: 6px 12px;
   border-radius: 5px;
   transition: color 0.3s ease, background-color 0.3s ease;
+  white-space: nowrap;
 }
 
 /* Hover effect */
@@ -60,40 +62,34 @@ html {
   border-radius: 28px;
 }
 
-/*style fot footer bar */
-.footer-bar {
-  background-color: #fbf7f6;
-  border: 4px solid rgb(203, 228, 144);
-  position: relative;
-  top: 250px;
-  left: 0;
-  bottom: 0;
-  z-index: 1000;
-  width: 100%;
+#top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background-color: rgba(255, 143, 192, 0.8);
+  color: #fff;
+  border: none;
   padding: 10px;
-  box-shadow: 0 4px 4px rgba(255, 245, 245, 0.78);
-  border-radius: 15px;
-  margin: 0;
-  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
-.footer-bar p {
-  margin: 0;
-  padding: 0;
-  font-family: poppins, sans-serif;
-  color: rgb(81, 71, 71);
-  font-size: 14px;
-  font-weight: bold;
+#top.show {
+  opacity: 1;
+  visibility: visible;
 }
 
-.mood-circle{
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
-  margin-right: 10px;
-  background-color: #dab1da;
-  display: inline-block;
-  border: 1px solid #ffffff;
+#top:hover {
+  background-color: #9fc4d3;
+}
+
+#top::before {
+  content: '↑';
+  font-size: 20px;
 }
 
 
@@ -105,58 +101,47 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  min-height: 100vh;
+  min-height: 1500px;
   padding-top: 50px;
   overflow-y: scroll;
   overflow-x: hidden;
   user-select: text !important;
 }
 
-/*fixed border for most pages*/
-.fixed-border, .fixed-border2 , .fixed-border4, .fixed-border5 {
+/* Fixed border background box for content sections */
+.fixed-border, .fixed-border2, .fixed-border3, .fixed-border4, .fixed-border5 {
   position: absolute;
   background-color: #fbf7f6;
   border: 4px solid rgba(255, 186, 224, 0.89);
   top: 100px;
   left: 29px;
   padding: 10px;
-  width: calc(100% - 58px);
-  height: 200vh;
+  width: calc(100% - 48px);
+  height: 180vh;
   border-radius: 15px;
   box-sizing: border-box;
   flex-wrap: wrap;
-  z-index: -1;
+  z-index: 0;
 }
 
-/*fixed border for topic 2 page*/
- .fixed-border3 {
-  position: absolute;
-  background-color: #fbf7f6;
-  border: 4px solid rgba(255, 186, 224, 0.89);
-  top: 100px;
-  left: 29px;
-  padding: 10px;
-  width: calc(100% - 58px);
-  height: 360vh;
-  border-radius: 15px;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-   z-index: -1;
-}
+/* specific heights */
+.fixed-border, .fixed-border2 { height: 180vh; }
+.fixed-border4, .fixed-border3 { height: 500vh; }
+.fixed-border5 { height: 180vh; }
 
 /*welcome page 3 pictures with hover*/
 .image-container {
-  display: flex; /*Arranges images in a row*/
-  gap: 10px; /*Adding spaces in between images*/
-  justify-content: center; /*centers images*/
-  margin-top: 70px; /*Adds spacing between the navbar and images*/
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 70px;
   padding-bottom: 10px;
   max-width: 100%;
 }
 
 .image-container img {
-  max-width: 30%; /*Adjusts image width*/
-  height: auto; /*Keeps the aspect ratio*/
+  max-width: 30%;
+  height: auto;
   transition: box-shadow 0.10s ease-in-out, transform 0.10s ease-in-out;
   filter: drop-shadow(0px 0px 10px rgb(217, 237, 174));
   border-radius: 15px;
@@ -170,7 +155,7 @@ body {
 .intro-text{
   color: rgba(255, 143, 192, 0.89);
   text-align: center;
-  font-size: 40px;
+  font-size: 28px;
   font-weight: bold;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -193,7 +178,7 @@ body {
 .short-bio{
   color: rgb(117, 101, 101);
   text-align: center;
-  font-size: 45px;
+  font-size: 24px;
   font-weight: bold;
   margin-top: 10px;
   width: 80%;
@@ -286,7 +271,7 @@ body {
 .home-text{
   color: rgb(179, 204, 105);
   text-align: center;
-  font-size: 40px;
+  font-size: 24px;
   font-weight: bold;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -318,18 +303,22 @@ body {
   transition: box-shadow 0.10s ease-in-out, transform 0.10s ease-in-out;
 }
 
-/**/
 .table-contents a{
   color: rgb(117, 101, 101);
   text-decoration: none;
   margin-bottom: 10px;
 }
 
-/**/
+table tr:hover {
+  background-color: #ffe6f0;
+  cursor: pointer;
+  transition: box-shadow 0.10s ease-in-out, transform 0.10s ease-in-out;
+}
+
 .topic-color{
   color: rgb(179, 204, 105);
   text-align: center;
-  font-size: 40px;
+  font-size: 24px;
   font-weight: bold;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -341,34 +330,37 @@ body {
 }
 
 /*style for copy-and-paste action*/
-.two-text::selection, .topic-description::selection{
+.two-text::selection, .seo-list::selection, .topic-description::selection{
   color: rgba(255, 143, 192, 0.89);
 }
 
 /*main text for home*/
 .topic-description{
   color: rgb(117, 101, 101);
-  font-size: 30px;
+  font-size: 18px;
   text-decoration: none;
   font-weight: bold;
   padding: 10px 20px;
   display: flex;
-  margin-top: 50px;
+  margin-top: 20px;
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: calc(100% - 40px);
   text-align: left;
   word-wrap: break-word;
-  left: 100px;
+  box-sizing: border-box;
+  left: 50%;
+  transform: translateX(-50%);
   overflow-wrap: break-word;
+  margin-bottom: 20px;
 }
 
 /*first header topic one*/
 .one-header{
   color: rgba(255, 143, 192, 0.89);
   text-align: center;
-  font-size: 45px;
+  font-size: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -383,7 +375,7 @@ body {
 /*main text for topic one*/
 .one-text{
   color: rgb(117, 101, 101);
-  font-size: 30px;
+  font-size: 18px;
   text-decoration: none;
   left: 50px;
   font-weight: bold;
@@ -406,7 +398,7 @@ body {
 .one-header2{
   color: rgba(255, 143, 192, 0.89);
   text-align: center;
-  font-size: 38px;
+  font-size: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -424,7 +416,7 @@ body {
   margin: 10px auto;
   border: 2px solid rgba(69, 68, 68, 0.89);
   font-family: poppins, sans-serif;
-  font-size: 22px;
+  font-size: 16px;
   border-collapse: collapse;
   position: relative;
 }
@@ -454,12 +446,11 @@ body {
   color: rgb(117, 101, 101);
 }
 
-
 /*first header topic two*/
 .two-header1{
   color: rgb(97, 181, 213);
   text-align: center;
-  font-size: 45px;
+  font-size: 26px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -474,7 +465,7 @@ body {
 /*main text for topic two*/
 .two-text{
   color: rgb(117, 101, 101);
-  font-size: 30px;
+  font-size: 18px;
   text-decoration: none;
   left: 50px;
   font-weight: bold;
@@ -498,11 +489,29 @@ body {
   color: #ff8fc0;
 }
 
+.topic-two-pic {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0px 0px 10px rgb(217, 237, 174));
+  border-radius: 15px;
+  display: block;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.topic-two-pic:hover {
+  transition: box-shadow 0.10s ease-in-out, transform 0.10s ease-in-out;
+  filter: drop-shadow(0px 0px 10px rgb(123, 213, 255));
+}
+
+
 /*first header for quiz*/
 .quiz-header{
   color: rgb(179, 204, 105);
   text-align: center;
-  font-size: 45px;
+  font-size: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -512,7 +521,7 @@ body {
 /*styling for quiz intro text*/
 .quiz-intro{
   color: rgb(117, 101, 101);
-  font-size: 35px;
+  font-size: 20px;
   text-decoration: none;
   font-weight: bold;
   padding: 10px 20px;
@@ -533,35 +542,39 @@ body {
 }
 
 /*styling for quiz questions with the options*/
-.quiz-question{
+.quiz-question {
   color: rgb(117, 101, 101);
-  font-size: 25px;
+  font-size: 18px;
   text-decoration: none;
   left: 30px;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 20px;
   display: inline-block;
-  margin-top: 50px;
+  margin-top: 30px;
   position: relative;
   justify-content: center;
   width: 80%;
   text-align: left;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  border: 2px solid rgba(255, 143, 192, 0.6);
+  border-radius: 12px;
+  background-color: rgba(255, 240, 246, 0.4);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
 }
 
 /*style for quiz question itself*/
 .quiz-question h2{
   color: rgb(150, 175, 59);
-  font-size: 30px;
+  font-size: 22px;
 }
 
 /*style for quiz and restart button*/
 .quiz-button, #restart {
   color: rgb(255, 255, 255);
   text-align: center;
-  margin-top: 50px;
   margin-left: 50px;
+  margin-top: 20px;
   font-size: 16px;
   font-weight: bold;
   padding: 10px 20px;
@@ -571,6 +584,8 @@ body {
   border: 4px solid rgb(255, 143, 192);
   border-radius: 15px;
   box-shadow: 0 4px 4px rgba(221, 217, 217, 0.78);
+  position: absolute;
+  z-index: 10;
 }
 
 /*style for quiz result*/
@@ -580,20 +595,31 @@ body {
   text-align: center;
 }
 
-/*style for result text*/
+/*  result box */
 #result {
-  color: rgb(83, 73, 73);
-  font-size: 34px;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 10px 20px;
-  display: inline-block;
-  margin-top: 50px;
-  position: relative;
-  justify-content: center;
-  width: 100%;
+  color: #4a4a4a;
+  background-color: rgba(255, 228, 240, 0.7); /* light pink background */
+  border: 2px solid rgb(255, 143, 192);
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 20px 25px;
+  margin-left: 50px;
+  margin-top: 100px;
+  max-width: 800px;
+  width: calc(100% - 60px);
+  box-shadow: 0 4px 8px rgb(176, 220, 239);
   text-align: left;
-  margin-left: 30px;
+  line-height: 1.6;
+  position: absolute;
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+#result.show {
+  display: block;
+  opacity: 1;
 }
 
 
@@ -601,7 +627,7 @@ body {
 .ref-header1{
   color: rgb(97, 181, 213);
   text-align: center;
-  font-size: 75px;
+  font-size: 36px;
   margin-top: 30px;
   margin-bottom: 20px;
   display: flex;
@@ -621,7 +647,7 @@ body {
 /*main text for references*/
 .ref-text {
   color: rgb(117, 101, 101);
-  font-size: 35px;
+  font-size: 20px;
   text-decoration: none;
   font-weight: bold;
   padding: 10px 20px;
@@ -636,7 +662,7 @@ body {
 /*main text for references*/
 .ref-citations{
   color: rgb(117, 101, 101);
-  font-size: 20px;
+  font-size: 16px;
   text-decoration: none;
   left: 50px;
   font-weight: bold;
@@ -653,7 +679,7 @@ body {
 /*header two for references/ resources*/
 .res-header2{
   color: rgb(255, 143, 192);
-  font-size: 60px;
+  font-size: 28px;
   text-decoration: none;
   font-weight: bold;
   padding: 10px 20px;
@@ -669,7 +695,7 @@ body {
 /*text for references*/
 .ref-text a{
   color: rgb(117, 101, 101);
-  font-size: 30px;
+  font-size: 18px;
   text-decoration: none;
   left: 50px;
   font-weight: bold;
@@ -686,7 +712,7 @@ body {
 /*text for resources*/
 .res-text{
   color: rgb(117, 101, 101);
-  font-size: 20px;
+  font-size: 16px;
   text-decoration: none;
   left: 50px;
   font-weight: bold;
@@ -722,18 +748,18 @@ body {
 
 /*customized scrollbar*/
 ::-webkit-scrollbar {
-  width: 8px; /* Width of the vertical scrollbar */
-  height: 8px; /* Height of the horizontal scrollbar */
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background-color: #f1f1f1; /* Background color of the track */
+  background-color: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(64, 59, 59, 0.35); /* Color of the thumb */
-  border-radius: 4px; /* Rounded corners */
+  background-color: rgba(64, 59, 59, 0.35);
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #ff8fc0; /* Changes color when hovering */
+  background-color: #ff8fc0;
 }
 
 ::-moz-selection {
@@ -746,14 +772,280 @@ body {
   text-shadow: none;
 }
 
-
-@media only screen and (max-width: 768px) {
-  .image-container img {
-    max-width: 50%; /* Responsive images on smaller screens */
+/* iPads and tablets (portrait: 768px to 860px) */
+@media all and (min-width: 768px) and (max-width: 860px) {
+  body {
+    padding: 40px 20px;
   }
 
-  .navbar {
+  .fixed-border {
+    height: 200vh;
+    width: calc(100% - 48px);
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .fixed-border2 {
+    height: 275vh;
+    width: calc(100% - 48px);
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .fixed-border3, .fixed-border4 {
+    height: 200vh;
+    width: calc(100% - 48px);
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .home-link a {
+    transform: translateX(-50%);
+  }
+
+  .nava a {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .content-container {
+    padding: 20px;
+  }
+
+  .image-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .image-container img {
+    max-width: 45%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .table {
+    font-size: 16px;
+  }
+
+  .td, .th {
     padding: 10px;
   }
+
+  .topic-description {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  /* Quiz section (tablets) */
+  #quiz-container {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .quiz-button {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+
+  .quiz-option {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .quiz-question {
+    margin-bottom: 20px;
+  }
+
+  #result {
+    font-size: 16px;
+    max-width: 700px;
+    margin-top: 30px;
+  }
 }
+
+/* Mobile devices (430px and below) */
+@media all and (max-width: 430px) {
+  body {
+    padding: 60px 10px 10px;
+  }
+
+  .fixed-border {
+    height: 200vh;
+    width: calc(100% - 48px);
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .fixed-border2 {
+    height: 80vh;
+    width: calc(100% - 48px);
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .fixed-border3, .fixed-border4 {
+    height: 400vh;
+    width: calc(100% - 48px);
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .nava a {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .content-container {
+    padding: 10px;
+  }
+
+  .image-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-container img {
+    max-width: 60%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .table {
+    font-size: 14px;
+  }
+
+  .td, .th {
+    padding: 5px;
+  }
+
+  .one-text {
+    font-size: 0.9rem !important;
+    left: auto;
+  }
+
+  /* Quiz section (mobile) */
+  #quiz-container {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .quiz-button {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  .quiz-option {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .quiz-question {
+    margin-bottom: 15px;
+  }
+
+  .quiz-container input[type="radio"] {
+    width: 20px;
+  }
+
+  #result {
+    font-size: 14px;
+    max-width: 90%;
+    margin-top: 100px;
+  }
+}
+
+/* Very small devices (480px and below) */
+@media all and (max-width: 480px) {
+  .image-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fixed-border {
+    height: 190vh;
+    width: calc(100% - 48px);
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .fixed-border2 {
+    height: 130vh;
+    width: calc(100% - 48px);
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .fixed-border3, .fixed-border4 {
+    height: 300vh;
+    width: calc(100% - 48px);
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .nava a {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .image-container img {
+    max-width: 50%;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  .one-text {
+    font-size: 0.9rem !important;
+    left: auto;
+  }
+
+  /* Quiz section (very small devices) */
+  #quiz-container {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .quiz-button {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .quiz-option {
+    font-size: 12px;
+    padding: 5px 10px;
+    max-width: 50%;
+  }
+
+  .quiz-question {
+    margin-bottom: 10px;
+    font-size: 13px;
+    max-width: 60%;
+  }
+
+  .quiz-container input[type="radio"] {
+    width: 18px;
+  }
+
+  #result {
+    font-size: 12px;
+    max-width: 50%;
+    margin-top: 100px;
+  }
+}
+
 
